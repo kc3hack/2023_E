@@ -24,6 +24,11 @@
 <!-- 使用技術を入力 -->
 
 
+## 環境構築
+
+1. git clone
+2. npm install
+3. npm run dev
 
 <!--
 markdownの記法はこちらを参照してください！
