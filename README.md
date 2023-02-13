@@ -24,24 +24,8 @@
 <!-- 使用技術を入力 -->
 
 
-## 環境構築
-
-### Node.js
-
-### Yarn
-
-```
-npm install -g yarn
-```
-
-### ローカルサーバーを立ち上げる
-
-```
-yarn start
-```
 
 <!--
 markdownの記法はこちらを参照してください！
 https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 -->
-
