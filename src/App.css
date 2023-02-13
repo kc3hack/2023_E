@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html, body, #root, .App {
+    height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main {
+    display: flex;
+    height: calc(100vh - 2.75em);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.row-left {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
 }
 
-.card {
-  padding: 2em;
+.row-center {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.row-right {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+}
+
+.camera-view {
+    background-color: #ffffff;
+    height: 200%;
+}
+
+.model-select {
+    background-color: #bfbfbf;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.model-options {
+    background-color: #9f9f9f;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.general-options {
+    background-color: #9f9f9f;
+    height: 100%;
+    padding: 0.5em;
+}
+
+header {
+    background-color: #3f3f3f;
+    padding: 0.5em;
+}
+
+h1 {
+    font-size: larger;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: large;
 }
