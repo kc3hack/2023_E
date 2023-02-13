@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const Model = () => {
-    const gltf = useLoader(GLTFLoader, '/models/man.glb');
+    const gltf = useLoader(GLTFLoader, '/models/cube.gltf');
     return (
         <>
             <primitive object={gltf.scene} scale={1.0}/>
