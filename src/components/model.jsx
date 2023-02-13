@@ -1,26 +1,29 @@
-import React, { useRef, useState } from "react";
-import { useLoader, useFrame } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import "/src/css/styles.css";
+import { Canvas } from "@react-three/fiber";
+import { useLoader } from '@react-three/fiber';
+import { Environment, OrbitControls } from "@react-three/drei";
+import { Suspense } from 'react';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-const GltfModel = ({ '/public/', scale = 40, position = [0, 0, 0] }) => {
-  const ref = useRef();
-  const gltf = useLoader(GLTFLoader, modelPath);
-  const [hovered, hover] = useState(false);
-
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.y += 0.003));
-  return (
-    <>
-      <primitive
-        ref={ref}
-        object={gltf.scene}
-        position={position}
-        scale={hovered ? scale * 1.2 : scale}
-        onPointerOver={(event) => hover(true)}
-        onPointerOut={(event) => hover(false)}
-      />
-    </>
-  );
+const Model = () => {
+    const gltf = useLoader(GLTFLoader, '/models/man.glb');
+    return (
+        <>
+            <primitive object={gltf.scene} scale={1.0}/>
+        </>
+    );
 };
 
-export default GltfModel;
+export default function ModelApp() {
+    return (
+        <div className="ModelApp">
+            <Canvas>
+                <Suspense fallback={null}>
+                    <Model />
+                    <OrbitControls />
+                    <Environment preset="sunset" background/>
+                </Suspense>
+            </Canvas>
+        </div>
+    );
+}
