@@ -1,11 +1,78 @@
 .ModelApp {
-    font-family: sans-serif;
     text-align: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
-body {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+}
+
+html, body, #root, .App {
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    width: calc(100vw - 1em);
+    height: calc(100vh - 2.75em);
+}
+
+.row-left {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+}
+
+.row-center {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+
+.row-right {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+}
+
+.camera-view {
+    background-color: #ffffff;
+    height: 200%;
+}
+
+.model-select {
+    background-color: #bfbfbf;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.model-options {
+    background-color: #9f9f9f;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.general-options {
+    background-color: #9f9f9f;
+    height: 100%;
+    padding: 0.5em;
+}
+
+header {
+    background-color: #3f3f3f;
+    padding: 0.5em;
+}
+
+h1 {
+    font-size: larger;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: large;
 }
