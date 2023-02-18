@@ -1,15 +1,58 @@
 import "/src/css/styles.css";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls, TransformControls } from "@react-three/drei";
-import React, { Suspense, useEffect, useRef } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Controls, useControl } from "react-three-gui";
 
 function ModelA() {
+    const [select, setSelect] = useState(1);
+    const [Path, setPath] = useState('/models/people.glb');
+    const Selector = () =>{
+      if (select === 1) {
+        useEffect(() => {  
+          setPath('/models/people.glb')
+        }, [])
+      }  
+      if (select === 2) {
+        useEffect(() => {
+          setPath('/models/cube.gltf')
+        }, [])
+      }
+      if (select === 3) {
+        useEffect(() => {
+          setPath('/models/chair_classroom.glb')
+        }, [])
+      }
+      if (select === 4) {
+        useEffect(() => {
+          setPath('/models/desk_classroom.glb')
+        }, [])
+      }
+    }
+    const Picker = () => {
+      let list = []
+      for (let i = 1; i <= 5; i++){
+        list.push(
+          <li
+            onClick={(e) => {
+              setSelect(i)
+              Selector()
+            }}
+          >
+              <figure>
+                <img src={'/public/images/sample.png'} alt=""/>
+              </figure>
+            </li>
+        )
+      }
+      return list
+    }
+    const gltf = useLoader(GLTFLoader, Path)
     const orbit = useRef()
     const transform = useRef()
     const mode = useControl('mode', { type: 'select', items: ['scale', 'rotate', 'translate'] });
-    const gltf = useLoader(GLTFLoader, "/models/people.glb")
+    
     useEffect(() => {
       if (transform.current) {
         const controls = transform.current
@@ -27,9 +70,12 @@ function ModelA() {
           </mesh>
         </TransformControls>
         <OrbitControls ref={orbit} />
+        <div className="picker">{Picker()}</div>
         </>
     );
 };
+
+
 
 const ModelB = () =>{
     const gltf = useLoader(GLTFLoader, '/models/classroom_all.glb');
