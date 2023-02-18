@@ -22,9 +22,9 @@
 ## 使用技術
 
 <!-- 使用技術を入力 -->
-React
-React Three Fiber
-Vite
+React  
+React Three Fiber  
+Vite  
 
 
 ## 環境構築
