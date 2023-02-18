@@ -47,6 +47,7 @@ const ModelB = () =>{
 export default function ModelApp() {
     return (
         <div className="ModelApp">
+          <Controls.Provider>
             <Canvas>
                 <Suspense fallback={null}>
                     <ModelA />
@@ -55,6 +56,8 @@ export default function ModelApp() {
                 </Suspense>
             </Canvas>
             <Controls />
+          </Controls.Provider>
+            
         </div>
     );
 }
