@@ -47,14 +47,16 @@ const ModelB = () =>{
 export default function ModelApp() {
     return (
         <div className="ModelApp">
-            <Canvas>
-                <Suspense fallback={null}>
-                    <ModelA />
-                    <ModelB />
-                    <Environment preset="sunset" background/>
-                </Suspense>
-            </Canvas>
-            <Controls />
+            <Controls.Provider>
+                <Canvas>
+                    <Suspense fallback={null}>
+                        <ModelA />
+                        <ModelB />
+                        <Environment preset="sunset" background/>
+                    </Suspense>
+                </Canvas>
+                <Controls />
+            </Controls.Provider>
         </div>
     );
 }
