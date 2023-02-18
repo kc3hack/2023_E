@@ -1,35 +1,33 @@
-import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import '/src/css/App.css'
-//import ModelApp from '/src/components/model';
+import ModelApp from './model';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <header>
+        <h1>構図シミュレータ（仮）</h1>
+      </header>
+      <div className="main">
+        <div className="row-left">
+          <div className="general-options">
+            <h2>全体の設定</h2>
+          </div>
+        </div>
+        <div className="row-center">
+          <div className="camera-view">
+            <ModelApp />
+          </div>
+          <div className="model-select">
+            <h2>モデル選択</h2>
+          </div>
+        </div>
+        <div className="row-right">
+          <div className="model-options">
+            <h2>モデル詳細設定</h2>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
